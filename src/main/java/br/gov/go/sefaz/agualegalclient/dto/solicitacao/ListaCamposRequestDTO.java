@@ -1,10 +1,10 @@
-package br.gov.go.sefaz.agualegalclient.dto;
+package br.gov.go.sefaz.agualegalclient.dto.solicitacao;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class ListaCamposRequestDTO implements Serializable {
-
+public class ListaCamposRequestDTO implements Serializable{
+	
 	/**
 	 * 
 	 */
@@ -15,7 +15,7 @@ public class ListaCamposRequestDTO implements Serializable {
 	private String tipoAgua;
 
 	private String tokenGrafica;
-
+	
 	public ListaCamposRequestDTO() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -68,5 +68,6 @@ public class ListaCamposRequestDTO implements Serializable {
 		return "ListarCamposDTO [inscricaoEstadual=" + inscricaoEstadual + ", tipoAgua=" + tipoAgua + ", tokenGrafica="
 				+ tokenGrafica + "]";
 	}
-
+	
+	
 }

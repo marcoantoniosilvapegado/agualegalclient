@@ -1,4 +1,4 @@
-package br.gov.go.sefaz.agualegalclient.dto;
+package br.gov.go.sefaz.agualegalclient.dto.solicitacao;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -4,12 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.gov.go.sefaz.agualegalclient.domain.RespostaPadrao;
-import br.gov.go.sefaz.agualegalclient.dto.SituacaoEnvasadoraDTO;
 import br.gov.go.sefaz.agualegalclient.dto.solicitacao.SolicitacaoCredenciamentoDTO;
 import br.gov.go.sefaz.agualegalclient.testes.mocks.MocksTestesAPI;
 import br.gov.go.sefaz.agualegalclient.testes.service.AguaLegalClient;
@@ -21,23 +19,23 @@ public class TestesController {
 	@Autowired
 	AguaLegalClient client;
 
-	@GetMapping(value = "/teste1/{inscricao}")
+	/*@GetMapping(value = "/teste1/{inscricao}")
 	public ResponseEntity<RespostaPadrao> verificaSituacaoEnvasadora(
 			@PathVariable(name = "inscricao") String inscricao) {
-		SituacaoEnvasadoraDTO dtoTeste = MocksTestesAPI.retornaTesteSituacaoEnvasadora(inscricao);
+		SolicitacaoCredenciamentoDTO mock = MocksTestesAPI.solicitacaoCredenciamento1();
 		ResponseEntity<RespostaPadrao> resposta = null;
 		try {
-			resposta = this.client.verificaSituacaoEnvasadora(dtoTeste);
+			resposta = this.client.verificaSituacaoEnvasadora(mock);
 		} catch (Exception e) {
 			System.out.println(e.getLocalizedMessage());
 		}
 
 		return resposta;
-	}
+	}*/
 
 	@GetMapping(value = "/teste2")
 	public ResponseEntity<RespostaPadrao> solicitaCredenciamento() {
-		SolicitacaoCredenciamentoDTO dto = MocksTestesAPI.retornaTesteSolicitacaoCredenciamento1();
+		SolicitacaoCredenciamentoDTO dto = MocksTestesAPI.solicitacaoCredenciamento1();
 		
 		ResponseEntity<RespostaPadrao> resposta;
 		

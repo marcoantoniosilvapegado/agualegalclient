@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 
-import org.springframework.web.multipart.MultipartFile;
-
-
 public class ProdutoDTO implements Serializable {
 
 	/**
@@ -27,7 +24,8 @@ public class ProdutoDTO implements Serializable {
 	private byte[] fotoRecipienteBase;
 
 	public ProdutoDTO() {
-		super();		
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getDescricaoMarca() {
@@ -77,7 +75,39 @@ public class ProdutoDTO implements Serializable {
 	public void setFotoRecipienteBase(byte[] fotoRecipienteBase) {
 		this.fotoRecipienteBase = fotoRecipienteBase;
 	}
-	
-	
+
+
+
+	@Override
+	public String toString() {
+		return "ProdutoDTO [descricaoMarca=" + descricaoMarca + ", tipo=" + tipo + ", volume=" + volume
+				+ ", tipoEmbalagem=" + tipoEmbalagem + ", imagemRotuloBase=" + Arrays.toString(imagemRotuloBase)
+				+ ", fotoRecipienteBase=" + Arrays.toString(fotoRecipienteBase) + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(fotoRecipienteBase);
+		result = prime * result + Arrays.hashCode(imagemRotuloBase);
+		result = prime * result + Objects.hash(descricaoMarca, tipo, tipoEmbalagem, volume);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProdutoDTO other = (ProdutoDTO) obj;
+		return Objects.equals(descricaoMarca, other.descricaoMarca)
+				&& Arrays.equals(fotoRecipienteBase, other.fotoRecipienteBase)
+				&& Arrays.equals(imagemRotuloBase, other.imagemRotuloBase) && Objects.equals(tipo, other.tipo)
+				&& Objects.equals(tipoEmbalagem, other.tipoEmbalagem) && Objects.equals(volume, other.volume);
+	}
 
 }

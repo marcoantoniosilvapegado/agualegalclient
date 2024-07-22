@@ -1,5 +1,4 @@
-package br.gov.go.sefaz.agualegalclient.dto;
-
+package br.gov.go.sefaz.agualegalclient.dto.solicitacao;
 
 public class TokenRequestDTO {
 	

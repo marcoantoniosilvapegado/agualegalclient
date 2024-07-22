@@ -1,4 +1,4 @@
-package br.gov.go.sefaz.agualegalclient.dto;
+package br.gov.go.sefaz.agualegalclient.dto.solicitacao;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -9,7 +9,7 @@ public class CampoResponseDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private String nomeCampo;
 	private String descricaoCampo;
 	private String tipoAnalise;

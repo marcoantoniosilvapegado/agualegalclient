@@ -24,21 +24,16 @@ public class SolicitacaoCredenciamentoDTO implements Serializable {
 
 	private List<ProdutoDTO> listaProdutos = new ArrayList<ProdutoDTO>();
 
+	private String nomeGrafica;
+
+	private String cnpjGrafica;
+
 	public SolicitacaoCredenciamentoDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public SolicitacaoCredenciamentoDTO(String tokenGrafica, String inscricaoEstadual, String tipoAgua,
-			List<CampoDTO> listaCampos, List<ArquivoDTO> listaArquivos, List<ProdutoDTO> listaProdutos) {
-		super();
-		this.tokenGrafica = tokenGrafica;
-		this.inscricaoEstadual = inscricaoEstadual;
-		this.tipoAgua = tipoAgua;
-		this.listaCampos = listaCampos;
-		this.listaArquivos = listaArquivos;
-		this.listaProdutos = listaProdutos;
-	}
+
 
 	public String getTokenGrafica() {
 		return tokenGrafica;
@@ -88,9 +83,34 @@ public class SolicitacaoCredenciamentoDTO implements Serializable {
 		this.listaProdutos = listaProdutos;
 	}
 
+	public String getNomeGrafica() {
+		return nomeGrafica;
+	}
+
+	public void setNomeGrafica(String nomeGrafica) {
+		this.nomeGrafica = nomeGrafica;
+	}
+
+	public String getCnpjGrafica() {
+		return cnpjGrafica;
+	}
+
+	public void setCnpjGrafica(String cnpjGrafica) {
+		this.cnpjGrafica = cnpjGrafica;
+	}
+
+	@Override
+	public String toString() {
+		return "SolicitacaoCredenciamentoDTO [tokenGrafica=" + tokenGrafica + ", inscricaoEstadual=" + inscricaoEstadual
+				+ ", tipoAgua=" + tipoAgua + ", listaCampos=" + listaCampos + ", listaArquivos=" + listaArquivos
+				+ ", listaProdutos=" + listaProdutos + ", nomeGrafica=" + nomeGrafica + ", cnpjGrafica=" + cnpjGrafica
+				+ "]";
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(inscricaoEstadual, listaArquivos, listaCampos, listaProdutos, tipoAgua, tokenGrafica);
+		return Objects.hash(cnpjGrafica, inscricaoEstadual, listaArquivos, listaCampos, listaProdutos, nomeGrafica,
+				tipoAgua, tokenGrafica);
 	}
 
 	@Override
@@ -102,17 +122,11 @@ public class SolicitacaoCredenciamentoDTO implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		SolicitacaoCredenciamentoDTO other = (SolicitacaoCredenciamentoDTO) obj;
-		return Objects.equals(inscricaoEstadual, other.inscricaoEstadual)
+		return Objects.equals(cnpjGrafica, other.cnpjGrafica)
+				&& Objects.equals(inscricaoEstadual, other.inscricaoEstadual)
 				&& Objects.equals(listaArquivos, other.listaArquivos) && Objects.equals(listaCampos, other.listaCampos)
-				&& Objects.equals(listaProdutos, other.listaProdutos) && Objects.equals(tipoAgua, other.tipoAgua)
-				&& Objects.equals(tokenGrafica, other.tokenGrafica);
-	}
-
-	@Override
-	public String toString() {
-		return "SolicitacaoCredenciamentoDTO [tokenGrafica=" + tokenGrafica + ", inscricaoEstadual=" + inscricaoEstadual
-				+ ", tipoAgua=" + tipoAgua + ", listaCampos=" + listaCampos + ", listaArquivos=" + listaArquivos
-				+ ", listaProdutos=" + listaProdutos + "]";
+				&& Objects.equals(listaProdutos, other.listaProdutos) && Objects.equals(nomeGrafica, other.nomeGrafica)
+				&& Objects.equals(tipoAgua, other.tipoAgua) && Objects.equals(tokenGrafica, other.tokenGrafica);
 	}
 
 }
