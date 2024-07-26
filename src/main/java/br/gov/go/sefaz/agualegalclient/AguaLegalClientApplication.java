@@ -6,14 +6,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.http.ResponseEntity;
 
+import br.gov.go.sefaz.agualegalclient.domain.RespostaPadrao;
 import br.gov.go.sefaz.agualegalclient.dto.solicitacao.SolicitacaoCredenciamentoDTO;
 import br.gov.go.sefaz.agualegalclient.testes.mocks.MocksTestesAPI;
 import br.gov.go.sefaz.agualegalclient.testes.service.AguaLegalClient;
 
 @EnableFeignClients // adicionar essa annotation
 @SpringBootApplication
-public class AguaLegalClientApplication implements CommandLineRunner{
+public class AguaLegalClientApplication // implements CommandLineRunner
+{
 	
 	@Autowired
 	AguaLegalClient client;
@@ -22,17 +25,23 @@ public class AguaLegalClientApplication implements CommandLineRunner{
 		SpringApplication.run(AguaLegalClientApplication.class, args);		
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		
-		SolicitacaoCredenciamentoDTO dto = MocksTestesAPI.solicitacaoCredenciamento1();
+//	@Override
+	/*public void run(String... args) throws Exception {
+		ResponseEntity<RespostaPadrao> resposta = null;
+		SolicitacaoCredenciamentoDTO dto = MocksTestesAPI.mockSolicitacaoFaltandoCampos();
 		try {
-			this.client.solicitarCredenciamentoEnvasadora(dto);
-		} catch (Exception e) {			
+			 resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
+		} catch (Exception e) {		
+			System.out.println(e.getLocalizedMessage());
+			System.out.println(e.getMessage());			
 			e.printStackTrace();
+		}
+		if(resposta != null) {
+			System.out.println(resposta.toString());
 		}
 		
 		
-	}
+	}*/
+	//}
 
 }
