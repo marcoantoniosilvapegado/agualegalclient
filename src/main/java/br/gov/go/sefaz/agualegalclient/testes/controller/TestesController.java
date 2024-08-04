@@ -51,4 +51,69 @@ public class TestesController {
 		return resposta;
 	}
 	
+	@GetMapping(value = "/teste3")
+	public ResponseEntity<RespostaPadrao> teste3() {
+		
+		DadosSolicitacaoDTO dto = Mock.mockSucesso();
+		
+		ResponseEntity<RespostaPadrao> resposta;
+		
+		try {
+			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
+		} catch (Exception e) {
+			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
+			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+		}
+		return resposta;
+	}
+	
+	@GetMapping(value = "/teste4")
+	public ResponseEntity<RespostaPadrao> teste4() {
+		
+		DadosSolicitacaoDTO dto = Mock.mockEmail();
+		
+		ResponseEntity<RespostaPadrao> resposta;
+		
+		try {
+			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
+		} catch (Exception e) {
+			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
+			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+		}
+		return resposta;
+	}
+	
+	@GetMapping(value = "/teste5")
+	public ResponseEntity<RespostaPadrao> teste5() {
+		
+		DadosSolicitacaoDTO dto = Mock.mockCpfCnpj();
+		
+		ResponseEntity<RespostaPadrao> resposta;
+		
+		try {
+			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
+		} catch (Exception e) {
+			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
+			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+		}
+		return resposta;
+	}
+	
+	@GetMapping(value = "/teste6")
+	public ResponseEntity<RespostaPadrao> teste6() {
+		
+		DadosSolicitacaoDTO dto = Mock.mockGraficas();
+		
+		ResponseEntity<RespostaPadrao> resposta;
+		
+		try {
+			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
+		} catch (Exception e) {
+			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
+			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+		}
+		return resposta;
+	}
+	
+	
 }
