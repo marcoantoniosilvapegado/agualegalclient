@@ -2,15 +2,10 @@ package br.gov.go.sefaz.agualegalclient;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.http.ResponseEntity;
 
-import br.gov.go.sefaz.agualegalclient.domain.RespostaPadrao;
-import br.gov.go.sefaz.agualegalclient.dto.solicitacao.SolicitacaoCredenciamentoDTO;
-import br.gov.go.sefaz.agualegalclient.testes.mocks.MocksTestesAPI;
 import br.gov.go.sefaz.agualegalclient.testes.service.AguaLegalClient;
 
 @EnableFeignClients // adicionar essa annotation
