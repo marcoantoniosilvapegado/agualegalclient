@@ -219,7 +219,7 @@ public class Mock {
 		dto.getEnderecoDTO().setEnderecoEnvasador("Rua da Alegria, 737, Centro - São Luis - MA");
 		dto.getEnderecoDTO().setCoordenadasEnvasador("-2.5920175196049184, -44.18432958161534");
 		dto.getEnderecoDTO().setEnderecoEnvase("Rua Agostinho Torres, SN, João Paulo - São Luis - MA");
-		dto.getEnderecoDTO().setCoordenadasEnvase("-2.5920175196049184, -44.18432958161534");
+		dto.getEnderecoDTO().setCoordenadasEnvase("-2.5920175196049183, -44.18432958161533");
 
 		return dto;
 
