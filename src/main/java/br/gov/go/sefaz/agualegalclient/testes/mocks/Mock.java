@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import br.gov.go.sefaz.agualegalclient.dto.solicitacao.DadosSolicitacaoDTO;
 import br.gov.go.sefaz.agualegalclient.dto.solicitacao.LicencaDTO;
@@ -68,7 +69,7 @@ public class Mock {
 
 		LicencaDTO licencaSanitaria = new LicencaDTO();
 		licencaSanitaria.setEmissorLicenca(1);
-		licencaSanitaria.setNumero("12345");
+		licencaSanitaria.setNumero("123456");
 		licencaSanitaria.setImagem(carregaBytes("C:\\Users\\marco.pegado\\Desktop\\arqs\\licencavigilancia.jpg"));
 
 		LicencaDTO licencaAmbiental = new LicencaDTO();
@@ -159,7 +160,7 @@ public class Mock {
 		dto.getCadastro().setRazaoSocial("ASB BEBIDAS E ALIMENTOS LTDA");
 		dto.getCadastro().setNomeFantasia("ASB AGUAS");
 		dto.getCadastro().setInscricaoEstadual("122437111");
-
+		dto.setTokenGrafica("A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8S9t0U1v2W3x4Y5");
 		dto.setTipoAgua("3");
 
 		dto.setCnpjGrafica("06989552000150");
@@ -207,11 +208,11 @@ public class Mock {
 		LicencaDTO licencaSanitaria = new LicencaDTO();
 		licencaSanitaria.setEmissorLicenca(1);
 		licencaSanitaria.setNumero("12345");
-		licencaSanitaria.setImagem(carregaBytes("C:\\Users\\marco.pegado\\Desktop\\arqs\\licencavigilancia.jpg"));
+		licencaSanitaria.setImagem(carregaBytes("C:\\Users\\marco.pegado\\Desktop\\arqs\\teste.pdf"));
 
 		LicencaDTO licencaAmbiental = new LicencaDTO();
 		licencaAmbiental.setNumero("23456");
-		licencaAmbiental.setImagem(carregaBytes("C:\\Users\\marco.pegado\\Desktop\\arqs\\licencamineral.jpg"));
+		licencaAmbiental.setImagem(carregaBytes("C:\\Users\\marco.pegado\\Desktop\\arqs\\teste.pdf"));
 
 		dto.setLicencaVigilancia(licencaSanitaria);
 		dto.setLicencaMineracao(licencaAmbiental);
@@ -298,7 +299,7 @@ public class Mock {
 		return dto;
 
 	}
-	
+
 	public static DadosSolicitacaoDTO mockCpfCnpj() {
 
 		DadosSolicitacaoDTO dto = new DadosSolicitacaoDTO();
@@ -372,7 +373,7 @@ public class Mock {
 		return dto;
 
 	}
-	
+
 	public static DadosSolicitacaoDTO mockGraficas() {
 
 		DadosSolicitacaoDTO dto = new DadosSolicitacaoDTO();
@@ -445,7 +446,7 @@ public class Mock {
 
 		return dto;
 
-	}		
+	}
 
 	public static byte[] carregaBytes(String caminho) {
 		Path path = Paths.get(caminho);// ("C:\\Users\\marco.pegado\\Desktop\\arqs\\teste.pdf");
@@ -456,4 +457,6 @@ public class Mock {
 			return null;
 		}
 	}
+
+
 }

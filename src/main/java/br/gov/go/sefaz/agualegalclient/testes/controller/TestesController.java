@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.gov.go.sefaz.agualegalclient.domain.RespostaPadrao;
 import br.gov.go.sefaz.agualegalclient.dto.solicitacao.DadosSolicitacaoDTO;
+import br.gov.go.sefaz.agualegalclient.dto.solicitacao.RespostaPreAnalise;
 import br.gov.go.sefaz.agualegalclient.testes.mocks.Mock;
 import br.gov.go.sefaz.agualegalclient.testes.service.AguaLegalClient;
 
@@ -18,102 +19,72 @@ public class TestesController {
 
 	@Autowired
 	AguaLegalClient client;
-	
+
 	@GetMapping(value = "/teste1")
-	public ResponseEntity<RespostaPadrao> teste1() {
-		
+	public ResponseEntity<RespostaPreAnalise> teste1() {
+
 		DadosSolicitacaoDTO dto = Mock.mock1();
-		
-		ResponseEntity<RespostaPadrao> resposta;
-		
-		try {
-			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
-		} catch (Exception e) {
-			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
-			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-		}
+
+		ResponseEntity<RespostaPreAnalise> resposta;
+
+		resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
 		return resposta;
 	}
-	
+
 	@GetMapping(value = "/teste2")
-	public ResponseEntity<RespostaPadrao> teste2() {
-		
+	public ResponseEntity<RespostaPreAnalise> teste2() {
+
 		DadosSolicitacaoDTO dto = Mock.mock2();
-		
-		ResponseEntity<RespostaPadrao> resposta;
-		
-		try {
-			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
-		} catch (Exception e) {
-			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
-			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-		}
+
+		ResponseEntity<RespostaPreAnalise> resposta;
+
+		resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
 		return resposta;
 	}
-	
+
 	@GetMapping(value = "/teste3")
-	public ResponseEntity<RespostaPadrao> teste3() {
-		
+	public ResponseEntity<RespostaPreAnalise> teste3() {
+
 		DadosSolicitacaoDTO dto = Mock.mockSucesso();
-		
-		ResponseEntity<RespostaPadrao> resposta;
-		
-		try {
-			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
-		} catch (Exception e) {
-			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
-			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-		}
+
+		ResponseEntity<RespostaPreAnalise> resposta;
+
+		resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
 		return resposta;
 	}
-	
+
 	@GetMapping(value = "/teste4")
-	public ResponseEntity<RespostaPadrao> teste4() {
-		
+	public ResponseEntity<RespostaPreAnalise> teste4() {
+
 		DadosSolicitacaoDTO dto = Mock.mockEmail();
-		
-		ResponseEntity<RespostaPadrao> resposta;
-		
-		try {
-			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
-		} catch (Exception e) {
-			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
-			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-		}
+
+		ResponseEntity<RespostaPreAnalise> resposta;
+
+		resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
 		return resposta;
 	}
-	
+
 	@GetMapping(value = "/teste5")
-	public ResponseEntity<RespostaPadrao> teste5() {
-		
+	public ResponseEntity<RespostaPreAnalise> teste5() {
+
 		DadosSolicitacaoDTO dto = Mock.mockCpfCnpj();
-		
-		ResponseEntity<RespostaPadrao> resposta;
-		
-		try {
-			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
-		} catch (Exception e) {
-			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
-			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-		}
+
+		ResponseEntity<RespostaPreAnalise> resposta;
+
+		resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
 		return resposta;
 	}
-	
+
 	@GetMapping(value = "/teste6")
-	public ResponseEntity<RespostaPadrao> teste6() {
-		
+	public ResponseEntity<RespostaPreAnalise> teste6() {
+
 		DadosSolicitacaoDTO dto = Mock.mockGraficas();
-		
-		ResponseEntity<RespostaPadrao> resposta;
-		
-		try {
-			resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
-		} catch (Exception e) {
-			RespostaPadrao resp = new RespostaPadrao(e.getLocalizedMessage(), 1, false);			
-			return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-		}
+
+		ResponseEntity<RespostaPreAnalise> resposta;
+
+		resposta = this.client.solicitarCredenciamentoEnvasadora(dto);
 		return resposta;
+
 	}
-	
-	
+
 }

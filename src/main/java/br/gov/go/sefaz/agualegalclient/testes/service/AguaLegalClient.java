@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.gov.go.sefaz.agualegalclient.domain.RespostaPadrao;
 import br.gov.go.sefaz.agualegalclient.dto.solicitacao.DadosSolicitacaoDTO;
+import br.gov.go.sefaz.agualegalclient.dto.solicitacao.RespostaPreAnalise;
 
 @FeignClient(name = "agualegalClient", url = "localhost:8080/api/credenciamento")
 public interface AguaLegalClient {
 		
 	  	@PostMapping("/solicitacao")
-	  	public ResponseEntity<RespostaPadrao> solicitarCredenciamentoEnvasadora(
+	  	public ResponseEntity<RespostaPreAnalise> solicitarCredenciamentoEnvasadora(
 				@RequestBody  DadosSolicitacaoDTO dto
 				);
 }	
